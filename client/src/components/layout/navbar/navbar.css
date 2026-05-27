@@ -1,0 +1,254 @@
+.navbar{
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+}
+
+.navbar > .navLogo > a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar > .navLogo > a > img{
+    height: 7.2rem;
+    width: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+
+.navbar > .navLogo > a:hover > img{
+    transform: rotate(10deg) scale(1.15);
+}
+
+/********************* Navbar Menu ********************/
+.navbar > ul.navMenu{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.navbar > ul.navMenu > li{
+    margin: 0 1.5rem 0 0;
+    position: relative;
+}
+
+.navbar > ul.navMenu > li > a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+    border-radius: 8px;
+}
+
+.navbar > ul.navMenu > li > a.active{
+    font-weight: 700;
+    color: var(--primary);
+    background-color: rgba(139, 92, 246, 0.08);
+}
+
+.navbar > ul.navMenu > li > a > span{
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.navbar > ul.navMenu > li > a:hover {
+    color: var(--primary);
+    background-color: rgba(139, 92, 246, 0.05);
+}
+
+.navbar > ul.navMenu > li > a > i{
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+}
+
+/******************** Sub Menu ********************/
+.navbar > ul.navMenu > li > ul.subMenu{
+    padding: 0.75rem;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--panel-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+    display: none;
+    z-index: 10;
+}
+
+.navbar > ul.navMenu > li:hover > ul.subMenu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: var(--hover-appear-animation) 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar > ul.navMenu > li > ul.subMenu > li{
+    width: 13rem;
+    height: auto;
+}
+
+.navbar > ul.navMenu > li > ul.subMenu > li > a{
+    display: block;
+    height: 100%;
+    font-size: 1.35rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    text-transform: capitalize;
+    color: var(--text-main);
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.navbar > ul.navMenu > li > ul.subMenu > li > a:hover{
+    background-color: rgba(139, 92, 246, 0.08);
+    color: var(--primary);
+}
+
+/********************* Nav Icons ********************/
+.navbar > .navIcons{
+    margin-left: 2.5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar > .navIcons > div {
+    margin-left: 1rem;
+}
+
+.navbar > .navIcons > button > i,
+.navbar > .navIcons > .profileIcon > i,
+.navbar > .navIcons > .cartIcon > i,
+.navbar > .navIcons > .barsIcon > i{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar > .navIcons > button,
+.navbar > .navIcons > .profileIcon,
+.navbar > .navIcons > .cartIcon,
+.navbar > .navIcons > .barsIcon {
+    position: relative;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    height: 3.8rem;
+    width: 3.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--panel-bg);
+    transition: var(--transition-smooth);
+    color: var(--text-main);
+}
+
+.navbar > .navIcons > button:hover,
+.navbar > .navIcons > .profileIcon:hover,
+.navbar > .navIcons > .cartIcon:hover,
+.navbar > .navIcons > .barsIcon:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.15);
+    color: var(--primary);
+}
+
+.navbar > .navIcons > .profileIcon > ul{
+    display: none;
+}
+
+.navbar > .navIcons > .profileIcon > ul.active{
+    padding: 0.75rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 1.25rem);
+    right: 0;
+    background-color: var(--panel-bg);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius);
+    animation: var(--appear-animation) 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar > .navIcons > .profileIcon > ul > li:first-child{
+    line-height: 1.5;
+}
+
+.navbar > .navIcons > .profileIcon > ul > li > a{
+    width: 14rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.35rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    border-radius: 8px;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+}
+
+.navbar > .navIcons > .profileIcon > ul > li > a:hover{
+    background-color: rgba(139, 92, 246, 0.08);
+    color: var(--primary);
+}
+
+/******************** Cart Icon ********************/
+.navbar > .navIcons > .cartIcon > span{
+    height: 1.25rem;
+    width: 1.25rem;
+    font-size: 0.8rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    border-radius: 50%;
+    border: 1px solid #b2beb5;
+}
+
+/******************** Bars Icon ********************/
+
+.navbar > .navIcons > .barsIcon{
+    display: none;
+}
+
+/******************** Media Query ********************/
+
+/* small tablet screen */
+@media (max-width: 768px) {
+    .navbar > .navLogo {
+        margin-right: auto;
+    }
+
+    .navbar > .navIcons > .barsIcon{
+        display: flex;
+        z-index: 10;
+    }
+
+    .navbar > ul.navMenu{
+        display: none;
+    }
+
+    .navbar > ul.navMenu.active{
+        padding: 3rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(1, 1, 1, 0.25);
+        animation:  var(--appear-animation) 0.5s;
+    }
+
+    .navbar > ul.navMenu > li:not(:last-child){
+        margin: 0 0 3em 0;
+    }
+}
+
