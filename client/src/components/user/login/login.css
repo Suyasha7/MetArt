@@ -1,0 +1,223 @@
+.loginContainer {
+    height: calc(100vh - var(--nav-height));
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f6efff 100%);
+    overflow: hidden;
+}
+
+/* Floral Decorations */
+.loginContainer > .floral-decoration {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.loginContainer > .left-flora {
+    bottom: -2rem;
+    left: -2rem;
+    transform: rotate(15deg);
+}
+
+.loginContainer > .right-flora {
+    top: -2rem;
+    right: -2rem;
+    transform: rotate(-15deg);
+}
+
+@media (max-width: 768px) {
+    .loginContainer > .floral-decoration {
+        width: 15rem;
+        height: 15rem;
+        opacity: 0.25;
+    }
+}
+
+/* Login Form glassmorphism card */
+.loginContainer > .loginForm {
+    width: 46rem;
+    padding: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(251, 248, 240, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.04), 
+                inset 0 0 0 1px rgba(226, 217, 194, 0.4);
+    z-index: 5;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(139, 92, 246, 0.05);
+}
+
+.loginContainer > .loginForm:hover {
+    box-shadow: 0 30px 60px rgba(139, 92, 246, 0.08), 
+                inset 0 0 0 1px rgba(139, 92, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Form Header styles */
+.loginContainer > .loginForm > .formHeader {
+    width: 100%;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginContainer > .loginForm > .formHeader > h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.loginContainer > .loginForm > .formHeader > .formSubtitle {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Input Fields Group with Icons */
+.loginContainer > .loginForm > .inputGroup {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1.5px solid rgba(139, 92, 246, 0.15);
+    padding: 0.5rem 0;
+    transition: var(--transition-smooth);
+}
+
+.loginContainer > .loginForm > .inputGroup:focus-within {
+    border-bottom-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.loginContainer > .loginForm > .inputGroup > .inputIcon {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    position: absolute;
+    left: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.loginContainer > .loginForm > .inputGroup:focus-within > .inputIcon {
+    color: var(--primary);
+}
+
+.loginContainer > .loginForm > .inputGroup > input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    font-size: 1.45rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.loginContainer > .loginForm > .inputGroup > input::placeholder {
+    color: #a3a3a3;
+    font-weight: 400;
+}
+
+/* Remember me & forgot password options */
+.loginContainer > .loginForm > .moreOptions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.5rem;
+}
+
+.loginContainer > .loginForm > .moreOptions > .rememberMe {
+    display: flex;
+    align-items: center;
+}
+
+.loginContainer > .loginForm > .moreOptions > .rememberMe > input[type="checkbox"] {
+    height: 1.6rem;
+    width: 1.6rem;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    accent-color: var(--primary);
+}
+
+.loginContainer > .loginForm > .moreOptions > .rememberMe > label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.loginContainer > .loginForm > .moreOptions > .forgotPassword > a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    transition: var(--transition-smooth);
+}
+
+.loginContainer > .loginForm > .moreOptions > .forgotPassword > a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Button & submit flows */
+.loginContainer > .loginForm > .submitGroup {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.loginContainer > .loginForm > .submitGroup > button {
+    height: 4.8rem;
+    width: 100%;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background: var(--gradient-accent);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+    transition: var(--transition-smooth);
+}
+
+.loginContainer > .loginForm > .submitGroup > button:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 12px 25px rgba(139, 92, 246, 0.35);
+    transform: translateY(-2px);
+}
+
+.loginContainer > .loginForm > .submitGroup > button:active {
+    transform: translateY(0);
+}
+
+/* Signup redirect link style */
+.loginContainer > .loginForm > .redirectText {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.loginContainer > .loginForm > .redirectText > a {
+    color: var(--primary);
+    font-weight: 700;
+    transition: var(--transition-smooth);
+}
+
+.loginContainer > .loginForm > .redirectText > a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}

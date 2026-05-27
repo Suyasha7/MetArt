@@ -1,0 +1,237 @@
+.registerContainer {
+    min-height: calc(100vh - var(--nav-height));
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f6efff 100%);
+    overflow: hidden;
+    padding: 4rem 2rem;
+}
+
+/* Floral Decorations */
+.registerContainer > .floral-decoration {
+    position: absolute;
+    width: 28rem;
+    height: 28rem;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+.registerContainer > .left-flora {
+    bottom: -3rem;
+    left: -3rem;
+    transform: rotate(25deg);
+}
+
+.registerContainer > .right-flora {
+    top: -3rem;
+    right: -3rem;
+    transform: rotate(-25deg);
+}
+
+@media (max-width: 768px) {
+    .registerContainer > .floral-decoration {
+        width: 16rem;
+        height: 16rem;
+        opacity: 0.25;
+    }
+}
+
+/* Register Form glassmorphism card */
+.registerContainer > .registerForm {
+    width: 48rem;
+    padding: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(251, 248, 240, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.04), 
+                inset 0 0 0 1px rgba(226, 217, 194, 0.4);
+    z-index: 5;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(139, 92, 246, 0.05);
+}
+
+.registerContainer > .registerForm:hover {
+    box-shadow: 0 30px 60px rgba(139, 92, 246, 0.08), 
+                inset 0 0 0 1px rgba(139, 92, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Form Header styles */
+.registerContainer > .registerForm > .formHeader {
+    width: 100%;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerContainer > .registerForm > .formHeader > h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.registerContainer > .registerForm > .formHeader > .formSubtitle {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Input Fields Group with Icons */
+.registerContainer > .registerForm > .inputGroup {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1.5px solid rgba(139, 92, 246, 0.15);
+    padding: 0.5rem 0;
+    transition: var(--transition-smooth);
+}
+
+.registerContainer > .registerForm > .inputGroup:focus-within {
+    border-bottom-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.registerContainer > .registerForm > .inputGroup > .inputIcon {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    position: absolute;
+    left: 0.5rem;
+    transition: var(--transition-smooth);
+}
+
+.registerContainer > .registerForm > .inputGroup:focus-within > .inputIcon {
+    color: var(--primary);
+}
+
+.registerContainer > .registerForm > .inputGroup > input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    font-size: 1.45rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.registerContainer > .registerForm > .inputGroup > input::placeholder {
+    color: #a3a3a3;
+    font-weight: 400;
+}
+
+/* Role Select dropdown custom styles */
+.registerContainer > .registerForm > .roleSelectGroup {
+    width: 100%;
+    margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerContainer > .registerForm > .roleSelectGroup > .roleLabel {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.registerContainer > .registerForm > .roleSelectGroup > .selectWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1.5px solid rgba(139, 92, 246, 0.15);
+    padding: 0.5rem 0;
+    transition: var(--transition-smooth);
+}
+
+.registerContainer > .registerForm > .roleSelectGroup > .selectWrapper:focus-within {
+    border-bottom-color: var(--primary);
+}
+
+.registerContainer > .registerForm > .roleSelectGroup > .selectWrapper > .selectIcon {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    position: absolute;
+    left: 0.5rem;
+}
+
+.registerContainer > .registerForm > .roleSelectGroup > .selectWrapper > select {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.registerContainer > .registerForm > .roleSelectGroup > .selectWrapper > select > option {
+    background-color: var(--panel-bg);
+    color: var(--text-main);
+}
+
+/* Submit flows */
+.registerContainer > .registerForm > .submitGroup {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.registerContainer > .registerForm > .submitGroup > button {
+    height: 4.8rem;
+    width: 100%;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    background: var(--gradient-accent);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.25);
+    transition: var(--transition-smooth);
+}
+
+.registerContainer > .registerForm > .submitGroup > button:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 12px 25px rgba(139, 92, 246, 0.35);
+    transform: translateY(-2px);
+}
+
+.registerContainer > .registerForm > .submitGroup > button:active {
+    transform: translateY(0);
+}
+
+/* Redirect link style */
+.registerContainer > .registerForm > .redirectText {
+    font-size: 1.35rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.registerContainer > .registerForm > .redirectText > a {
+    color: var(--primary);
+    font-weight: 700;
+    transition: var(--transition-smooth);
+}
+
+.registerContainer > .registerForm > .redirectText > a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
