@@ -1,0 +1,150 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+:root{
+  /* height */
+  --nav-height: 8.5rem;
+
+  /* main background */
+  --bg-main: #fcfbf9; /* Warm clean off-white */
+  --panel-bg: #fbf8f0; /* Yellowish beige panels */
+  --primary: #8b5cf6; /* Sleek purple */
+  --primary-light: #a78bfa; /* Sleek lavender */
+  --primary-dark: #7c3aed;
+  --gradient-accent: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%);
+  --gradient-hover: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+  --text-main: #0f172a; /* Slate 900 */
+  --text-muted: #475569; /* Slate 600 */
+  --card-shadow: 0 10px 30px rgba(139, 92, 246, 0.08);
+  --card-shadow-hover: 0 20px 40px rgba(139, 92, 246, 0.18);
+  --border-radius: 16px;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* animations */
+  --appear-animation: appear;
+  --hover-appear-animation: hoverAppear;
+  --trash-animation: trash;
+}
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes hoverAppear {
+  from {margin-top: 1rem; opacity: 0;}
+  to {margin-top: 0rem; opacity: 1;}
+}
+
+@keyframes trash{
+	0%{
+		transform: rotateZ(0deg);
+	}
+	25%{
+		transform: rotateZ(20deg);
+	}
+	50%{
+		transform: rotateZ(0deg);
+	}
+	75%{
+		transform: rotateZ(-20deg);	
+	}
+	100%{
+		transform: rotateZ(0deg);
+	}
+}
+
+.facebook{ color: #3B5998; }
+.instagram{ color: #E4405F; }
+.twitter{ color: #1DA1F2; }
+.messanger { color: #0084FF; }
+
+/********************Global Styles********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+}
+
+ul{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+input, button{
+  border: none;
+  outline: none;
+}
+
+html{
+  font-size: 62.5%; 
+  /* 1rem=16px=100%, but we want 1rem=10px. In percentage, 10/16*100 = 62.5.*/
+
+  scroll-behavior: smooth;
+}
+
+/******************** Default Css ********************/
+.app{
+  padding: 0 5rem;
+}
+
+
+/******************** Media Query ********************/
+
+/* large tablet screen */
+@media (max-width: 992px) {
+  html{
+    font-size: 60%;
+  }
+
+  .app {
+    padding: 0 6rem;
+  }
+}
+
+/* small tablet screen */
+@media (max-width: 768px) {
+  html{
+    font-size: 57%;
+  }
+
+  .app {
+    padding: 0 4rem;
+  }
+}
+
+/* large mobile screen */
+@media (max-width: 576px) {
+  html{
+    font-size: 53.5%;
+  }
+
+  .app {
+    padding: 0 2rem;
+  }
+}
+
+/* small mobile screen */
+@media (max-width: 480px) {
+  html{
+    font-size: 50%;
+  }
+  
+  .app {
+    padding: 0 1rem;
+  }
+}
+
+/* extra small mobile screen */
+@media (max-width: 360px) {
+  .app {
+    padding: 0 0.5rem;
+  }
+}
