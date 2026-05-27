@@ -1,0 +1,67 @@
+# =========================================================================
+# MetArt Root GitIgnore Configuration
+# =========================================================================
+
+# Dependencies
+node_modules/
+**/node_modules/
+jspm_packages/
+web_modules/
+
+# Environment and Secrets
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+.env
+.env.local
+client/.env
+server/config.env
+
+# Build and Production outputs
+client/build/
+client/dist/
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# Logs and Diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Testing and Coverage
+coverage/
+**/coverage/
+.nyc_output/
+
+# Temporary and Cache files
+.eslintcache
+.stylelintcache
+.cache/
+.parcel-cache/
+.turbo/
