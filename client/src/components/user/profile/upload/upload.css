@@ -1,0 +1,750 @@
+/* Premium Dual-Column Layout */
+.uploadContainer {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    margin: 3rem auto;
+    max-width: 1200px;
+    width: 100%;
+    animation: appear 0.5s ease-out;
+}
+
+/* Left Side: Upload Form */
+.uploadForm {
+    flex: 1.4;
+    background: var(--panel-bg);
+    padding: 3.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+}
+
+.uploadForm h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.uploadSubtitle {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+/******************** Form Rows ********************/
+.uploadForm form > .row1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.uploadForm form > .row1 > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadForm form > .row1 > div > span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+}
+
+.uploadForm form > .row1 > div > input,
+.uploadForm form > .row1 > div > select {
+    padding: 1.2rem 1.6rem;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    background-color: white;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+}
+
+.uploadForm form > .row1 > div > input:focus,
+.uploadForm form > .row1 > div > select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/******************** Row 2 (Description) ********************/
+.uploadForm form > .row2 {
+    margin-top: 2rem;
+}
+
+.uploadForm form > .row2 > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadForm form > .row2 > div > span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+}
+
+.uploadForm form > .row2 > div > textarea {
+    height: 12rem;
+    width: 100%;
+    padding: 1.4rem;
+    resize: vertical;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 8px;
+    font-size: 1.4rem;
+    transition: var(--transition-smooth);
+    background-color: white;
+}
+
+.uploadForm form > .row2 > div > textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+/******************** Row 3 (Images) ********************/
+.uploadForm form > .row3 {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadForm form > .row3 > span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+}
+
+.uploadForm form > .row3 > input {
+    display: none;
+}
+
+.uploadForm form > .row3 > label {
+    height: 14rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px dashed rgba(139, 92, 246, 0.25);
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+    background: rgba(139, 92, 246, 0.02);
+}
+
+.uploadForm form > .row3 > label:hover {
+    border-color: var(--primary);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.uploadForm form > .row3 > label > i {
+    font-size: 2.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.uploadForm form > .row3 > label > p {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.uploadForm form > .row3 > .imagePreview {
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    background: white;
+}
+
+.uploadForm form > .row3 > .imagePreview > img {
+    height: 9rem;
+    width: 9rem;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+/******************** Watermark Settings Section ********************/
+.watermarkSection {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.watermarkSection h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.watermarkSection p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.watermarkFields {
+    display: flex;
+    gap: 2rem;
+}
+
+.watermarkFields > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.watermarkFields span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+}
+
+.watermarkFields select,
+.watermarkFields input {
+    padding: 1rem 1.4rem;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    background-color: white;
+    font-size: 1.3rem;
+    color: var(--text-main);
+}
+
+.watermarkFields input:disabled {
+    background-color: #f8fafc;
+    color: #64748b;
+    border-color: #e2e8f0;
+    font-weight: 500;
+}
+
+/******************** Auction Fields ********************/
+.uploadForm form > .auctionFields {
+    height: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    transition: var(--transition-smooth);
+    overflow: hidden;
+    opacity: 0;
+}
+
+.uploadForm form > .auctionFields.active {
+    height: auto;
+    margin-top: 2.5rem;
+    overflow: visible;
+    opacity: 1;
+}
+
+.uploadForm form > .auctionFields > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.uploadForm form > .auctionFields > div > span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.6rem;
+}
+
+.uploadForm form > .auctionFields > div > input {
+    padding: 1.1rem 1.5rem;
+    border: 1px solid rgba(139, 92, 246, 0.15);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    background-color: white;
+}
+
+/******************** Form Footer Buttons ********************/
+.uploadForm form > .buttons {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(139, 92, 246, 0.08);
+    padding-top: 2rem;
+}
+
+.auctionCheckboxContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.auctionCheckboxContainer input[type="checkbox"] {
+    height: 1.8rem;
+    width: 1.8rem;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.auctionCheckboxContainer label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.btn-clear {
+    margin-left: auto;
+    height: 4.4rem;
+    width: 10rem;
+    color: var(--text-muted);
+    background-color: #f1f5f9;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-clear:hover {
+    background-color: #e2e8f0;
+    color: var(--text-main);
+}
+
+.btn-submit {
+    margin-left: 1.5rem;
+    height: 4.4rem;
+    width: 12rem;
+    color: white;
+    background: var(--gradient-accent);
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-submit:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 6px 16px rgba(139, 92, 246, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/******************** Right Side: AI Copilot Panel ********************/
+.aiCopilotPanel {
+    flex: 1;
+    background: linear-gradient(145deg, #ffffff 0%, #f7f5ff 100%);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(139, 92, 246, 0.12);
+    position: sticky;
+    top: 10.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    transition: var(--transition-smooth);
+}
+
+.aiCopilotPanel:hover {
+    box-shadow: var(--card-shadow-hover);
+    border-color: rgba(139, 92, 246, 0.22);
+}
+
+.aiCopilotHeader {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+    padding-bottom: 1.5rem;
+}
+
+.sparkleIcon {
+    font-size: 2.8rem;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.aiCopilotHeader h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.aiCopilotHeader .subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.1rem;
+}
+
+.aiCopilotContent {
+    flex: 1;
+}
+
+/* Empty State */
+.aiEmptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.magic-wand {
+    font-size: 4rem;
+    color: var(--primary-light);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.aiEmptyState p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+/* Ready State */
+.aiReadyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    animation: appear 0.3s ease;
+}
+
+.readyPreview {
+    width: 100%;
+    max-height: 20rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.readyPreview img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.analyzeBtn {
+    width: 100%;
+    height: 4.8rem;
+    background: var(--gradient-accent);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: var(--transition-smooth);
+}
+
+.analyzeBtn:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.35);
+    transform: translateY(-2px);
+}
+
+.analyzeHelp {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Loading State & Art Scanner */
+.aiLoadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    animation: appear 0.3s ease;
+}
+
+.scanner {
+    width: 18rem;
+    height: 18rem;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+    border: 2px solid var(--primary-light);
+    margin-bottom: 2.5rem;
+}
+
+.scanner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.scannerLine {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px var(--primary);
+    animation: scan 2s linear infinite;
+    z-index: 10;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
+
+.aiLoadingSpinner {
+    margin-bottom: 1.5rem;
+}
+
+.spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid rgba(139, 92, 246, 0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loadingMessage {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Results State */
+.aiResultsState {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    animation: appear 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.resultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.resultsHeader span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #10b981; /* Premium Emerald color */
+}
+
+.applyBtn {
+    background: var(--gradient-accent);
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.2);
+}
+
+.applyBtn:hover {
+    background: var(--gradient-hover);
+    box-shadow: 0 6px 15px rgba(139, 92, 246, 0.3);
+    transform: translateY(-1px);
+}
+
+.appraisalItem {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.06);
+}
+
+.appraisalItem .label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.appraisalItem .value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.font-price {
+    font-size: 1.6rem !important;
+    color: var(--primary-dark) !important;
+}
+
+.text-capital {
+    text-transform: capitalize;
+}
+
+/* Tags Layout */
+.tagsContainer {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem 0 0 0 !important;
+}
+
+.tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.tagBadge {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: rgba(139, 92, 246, 0.08);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(139, 92, 246, 0.08);
+    transition: var(--transition-smooth);
+}
+
+.tagBadge:hover {
+    background: rgba(139, 92, 246, 0.15);
+}
+
+/* Description narrative styling */
+.descItem {
+    background: rgba(139, 92, 246, 0.02);
+    border: 1px dashed rgba(139, 92, 246, 0.15);
+}
+
+.descText {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 0.2rem;
+}
+
+.reanalyzeBtn {
+    width: 100%;
+    height: 4rem;
+    background: transparent;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: var(--primary);
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.reanalyzeBtn:hover {
+    background: rgba(139, 92, 246, 0.04);
+    border-color: var(--primary);
+}
+
+/******************** Media Queries ********************/
+@media (max-width: 992px) {
+    .uploadContainer {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .uploadForm {
+        width: 100%;
+    }
+
+    .aiCopilotPanel {
+        width: 100%;
+        position: static;
+    }
+}
+
+@media (max-width: 576px) {
+    .uploadForm {
+        padding: 2rem;
+    }
+
+    .uploadForm form > .row1 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .watermarkFields {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .uploadForm form > .auctionFields {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .uploadForm form > .buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .btn-clear {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .btn-submit {
+        margin-left: 0;
+        width: 100%;
+    }
+}

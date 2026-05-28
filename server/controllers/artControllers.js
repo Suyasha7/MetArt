@@ -30,10 +30,17 @@ export const createArt = catchAsyncError(async (req, res, next) => {
     const watermarkImageBuffer = await fs.promises.readFile(watermarkImagePath);
 
     if(artImages[0]){
+        const position = req.body.watermarkPosition || "southwest";
+        let sharpGravity = "southwest";
+        if (position === "center" || position === "centre") sharpGravity = "centre";
+        else if (position === "northeast") sharpGravity = "northeast";
+        else if (position === "northwest") sharpGravity = "northwest";
+        else if (position === "southeast") sharpGravity = "southeast";
+
         for (const image of artImages) {
             try {
                 const extname = image.originalname.split(".")[1];
-                const watermarkedImage = await sharp(image.buffer).composite([{input: watermarkImageBuffer, gravity: 'southwest'}]).toBuffer();
+                const watermarkedImage = await sharp(image.buffer).composite([{input: watermarkImageBuffer, gravity: sharpGravity}]).toBuffer();
 
                 const originalImageUri = `data:image/${extname};base64,${image.buffer.toString("base64")}`;
                 const watermarkedImageUri = `data:image/${extname};base64,${watermarkedImage.toString("base64")}`;
