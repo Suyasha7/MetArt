@@ -120,6 +120,11 @@ const Profile = () => {
                             <span className="profileBadge emailBadge">
                                 <i className="fa-regular fa-envelope"></i> {userData && userData.email}
                             </span>
+                            {myData && userData._id === myData._id && myData?.role !== "user" && (
+                                <NavLink to="upload" className="profileBadge uploadBadge">
+                                    <i className="fa-solid fa-cloud-arrow-up"></i> Upload Art
+                                </NavLink>
+                            )}
                         </div>
                     </div>
 
