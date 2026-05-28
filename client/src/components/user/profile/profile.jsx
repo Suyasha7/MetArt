@@ -13,7 +13,7 @@ import HireDialog from '../../dialogs/hire/hireDialog'
 import Khalti from '../../dialogs/khalti/khalti'
 
 // roles
-const roles = ['painter', 'sculptor', 'photographer', 'drawer']
+const roles = ['painter', 'sculptor', 'photographer', 'drawer', 'sketcher']
 
 
 const Profile = () => {

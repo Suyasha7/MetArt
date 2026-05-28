@@ -184,7 +184,7 @@ export const resetPassword = catchAsyncError(async (req, res, next) => {
 
 // update profile
 export const updateProfile = catchAsyncError(async (req, res, next) => {
-    const {name, email, facebook, instagram, twitter, khaltiPublicKey, khaltiSecretKey} = req.body
+    const {name, email, facebook, instagram, twitter, khaltiPublicKey, khaltiSecretKey, role} = req.body
     if(!name || !email) return next(new ErrorHandler("Name and email cannot be empty!", 400));
     const user = await User.findById(req.user.id);
 
@@ -195,6 +195,9 @@ export const updateProfile = catchAsyncError(async (req, res, next) => {
     user.socials.twitter = twitter;
     user.donation.khalti.public_key = khaltiPublicKey;
     user.donation.khalti.secret_key = khaltiSecretKey;
+    if (role) {
+        user.role = role;
+    }
 
     await user.save();
 

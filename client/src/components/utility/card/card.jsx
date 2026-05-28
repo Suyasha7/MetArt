@@ -71,7 +71,7 @@ const Card = ({art, title, style}) => {
   return (
     <div className="cardContainer" style={style}>
       {art?.artStatus === 'sold' && <div className="artStatus">Sold</div>}  
-      <div className='itemImage'>
+      <div className='itemImage' onClick={() => navigate(`/art/${art._id}`)} style={{ cursor: 'pointer' }}>
         <Watermark className="watermark" content={['@MetArt']}>
           <img src={art.images[0].watermarked_image_url} alt="product-pic" />
         </Watermark>
