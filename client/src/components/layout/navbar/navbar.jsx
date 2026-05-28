@@ -84,6 +84,13 @@ const Navbar = ({user, isAuthenticated}) => {
               )
             })
           }
+          {isAuthenticated && myData && (
+            <li onClick={() => setSidebar(false)}>
+              <NavLink exact="true" to={`/user/${myData._id}`}>
+                <span>My Profile</span>
+              </NavLink>
+            </li>
+          )}
         </ul>
         
         <div className='navIcons'>

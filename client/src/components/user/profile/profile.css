@@ -1,0 +1,326 @@
+/* Premium Profile Banner Header Cover */
+.profileBannerContainer {
+    position: relative;
+    width: 100%;
+    height: 32rem;
+    overflow: hidden;
+    background-color: #eae6df;
+}
+
+.profileBannerImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+    filter: brightness(0.98);
+}
+
+.bannerOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(252, 251, 249, 1) 100%);
+    pointer-events: none;
+}
+
+/* Profile Main Section */
+.profileSection {
+    max-width: 1200px;
+    margin: 0 auto 6rem auto;
+    padding: 0 3rem;
+    position: relative;
+}
+
+/* Floating lavender and beige flower SVGs */
+.profile-flora {
+    position: absolute;
+    width: 16rem;
+    height: 16rem;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.65;
+}
+
+.profile-flora-left {
+    left: -2rem;
+    top: 25rem;
+    animation: swayLeft 8s ease-in-out infinite alternate;
+}
+
+.profile-flora-right {
+    right: -2rem;
+    top: 25rem;
+    animation: swayRight 8s ease-in-out infinite alternate;
+}
+
+@keyframes swayLeft {
+    0% { transform: rotate(-5deg) translate(0, 0); }
+    100% { transform: rotate(5deg) translate(5px, -5px); }
+}
+
+@keyframes swayRight {
+    0% { transform: rotate(5deg) translate(0, 0); }
+    100% { transform: rotate(-5deg) translate(-5px, -5px); }
+}
+
+/* Overlaid Profile Profile Card */
+.profileSection > .profileCard {
+    background: white;
+    border-radius: 20px;
+    padding: 4rem 3rem 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.06);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+    position: relative;
+    margin-top: -12rem; /* offset overlaps cover banner */
+    z-index: 10;
+}
+
+/******************** avatar ********************/
+.profileSection > .profileCard > .avatar {
+    height: 16rem;
+    width: 16rem;
+    padding: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid white;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.15);
+    overflow: visible;
+}
+
+.profileSection > .profileCard > .avatar > label {
+    position: absolute;
+    height: 3.6rem;
+    width: 3.6rem;
+    border-radius: 50%;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    display: grid;
+    place-items: center;
+    background: var(--gradient-accent);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+    transition: var(--transition-smooth);
+    z-index: 15;
+}
+
+.profileSection > .profileCard > .avatar > label:hover {
+    background: var(--gradient-hover);
+    transform: scale(1.1);
+}
+
+.profileSection > .profileCard > .avatar > label > i {
+    font-size: 1.4rem;
+}
+
+.profileSection > .profileCard > .avatar > label > input {
+    display: none;
+}
+
+.profileSection > .profileCard > .avatar > p {
+    font-size: 6.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+.profileSection > .profileCard > .avatar > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/******************** User Metadata description Highlighting ********************/
+.profileMeta {
+    text-align: center;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.profileName {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.profileBadges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.profileBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.6rem 1.6rem;
+    border-radius: 30px;
+    transition: var(--transition-smooth);
+}
+
+.roleBadge {
+    background: var(--gradient-accent);
+    color: white;
+    text-transform: capitalize;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.emailBadge {
+    background: #f1f5f9;
+    color: var(--text-muted);
+    border: 1px solid rgba(139, 92, 246, 0.05);
+}
+
+/******************** button actions ********************/
+.profileSection > .profileCard > .buttons {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.profileSection > .profileCard > .buttons > button {
+    height: 4.2rem;
+    min-width: 11rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.profileSection > .profileCard > .buttons > button:hover {
+    transform: translateY(-2px);
+}
+
+/******************** Premium Interactive Capsules ********************/
+.profileSection > .profileOptions {
+    margin-top: 4rem;
+    z-index: 10;
+    position: relative;
+}
+
+.profileTabNav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    background: white;
+    border: 1px solid rgba(139, 92, 246, 0.1);
+    padding: 0.6rem;
+    border-radius: 40px;
+    box-shadow: var(--card-shadow);
+    max-width: max-content;
+    margin: 0 auto 4rem auto;
+}
+
+.profileTabLink {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem 2.4rem;
+    border-radius: 30px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileTabLink:hover:not(.active) {
+    color: var(--primary);
+    background: rgba(139, 92, 246, 0.05);
+    transform: translateY(-1px);
+}
+
+.profileTabLink.active {
+    background: var(--gradient-accent);
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.22);
+}
+
+/* Glassmorphism Outlet Card Container */
+.profileOutletContainer {
+    background: var(--panel-bg);
+    border: 1px solid rgba(139, 92, 246, 0.08);
+    border-radius: var(--border-radius);
+    padding: 3.5rem;
+    box-shadow: var(--card-shadow);
+    animation: appear 0.5s ease-out;
+    position: relative;
+    z-index: 5;
+}
+
+/******************** Media Queries ********************/
+@media (max-width: 768px) {
+    .profileBannerContainer {
+        height: 24rem;
+    }
+
+    .profileSection > .profileCard {
+        margin-top: -8rem;
+        padding: 3rem 2rem 2.5rem 2rem;
+    }
+
+    .profileSection > .profileCard > .avatar {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .profileSection > .profileCard > .avatar > p {
+        font-size: 5rem;
+    }
+
+    .profileName {
+        font-size: 2.3rem;
+    }
+
+    .profileOutletContainer {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profileSection {
+        padding: 0 1.5rem;
+    }
+
+    .profileTabNav {
+        border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0.8rem;
+    }
+
+    .profileTabLink {
+        flex: 1 1 40%;
+        font-size: 1.3rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .profile-flora {
+        display: none; /* Hide background SVGs on small mobile to avoid layout crowding */
+    }
+}
