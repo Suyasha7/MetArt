@@ -26,8 +26,14 @@ const ArtList = () => {
   useEffect(() => {
     if(allArts){
       if(id) {
-        const arts = allArts.filter(art => art.creator.toString() === id)
-        setArts(arts)
+        const filtered = allArts.filter(art => {
+          if (!art.creator) return false;
+          const creatorId = typeof art.creator === 'object' 
+            ? (art.creator._id || art.creator.id) 
+            : art.creator;
+          return creatorId && creatorId.toString() === id.toString();
+        });
+        setArts(filtered);
       }else{
         setArts(allArts)
       }
@@ -95,7 +101,7 @@ const ArtList = () => {
                   <td>{art.discount ? art.discount : 0} %</td>
                   <td>{art.category}</td>
                   <td>{moment(art.uploadedAt).format('YYYY-MM-DD')}</td>
-                  { (myData?._id === art.creator || myData?.role === 'admin') &&
+                  { (myData?._id && art.creator && (myData._id === (typeof art.creator === 'object' ? (art.creator._id || art.creator.id) : art.creator).toString() || myData?.role === 'admin')) &&
                     <td>
                       <UpdateArtwork currentArtwork={art} />
                       <i className="fa-solid fa-trash-can" onClick={() => handleDeleteArtwork(art._id)}></i>
