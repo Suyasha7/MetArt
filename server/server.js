@@ -17,6 +17,7 @@ import paymentRoutes from './routes/paymentRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import adminRoutes from './routes/adminRoutes.js'
 import aiRoutes from './routes/aiRoutes.js'
+import spaceRoutes from './routes/spaceRoutes.js'
 
 // dot env
 dotenv.config({path: './config.env'});
@@ -47,6 +48,7 @@ app.use("/api/v1", paymentRoutes)
 app.use("/api/v1", orderRoutes)
 app.use("/api/v1", adminRoutes)
 app.use("/api/v1", aiRoutes)
+app.use("/api/v1", spaceRoutes)
 
 
 // error middleware

@@ -65,3 +65,5 @@ coverage/
 .cache/
 .parcel-cache/
 .turbo/
+.mongodb_data/
+*.mp4

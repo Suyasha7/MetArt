@@ -1,0 +1,436 @@
+.matcherPage {
+  background-color: #faf7f2; /* Creamy light beige */
+  color: #292524; /* Warm dark stone text */
+  min-height: 100vh;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  padding-bottom: 5rem;
+}
+
+.matcherHero {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.matcherHero .badge {
+  background: rgba(139, 92, 246, 0.08);
+  color: #7c3aed;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.matcherHero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #1c1917 30%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.matcherHero p {
+  color: #57534e;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Layout */
+.matcherContainer {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  padding: 0 2rem;
+  align-items: start;
+}
+
+.matcherFormCard {
+  background: #fff;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.03);
+}
+
+.matcherFormCard h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1c1917;
+  margin-bottom: 2rem;
+  border-left: 4px solid #8b5cf6;
+  padding-left: 0.75rem;
+}
+
+.quizForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.quizQuestion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quizQuestion label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1c1917;
+}
+
+/* Option grid layout */
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.optionsGrid.flexRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.quizOptionCard {
+  background: #fafafa;
+  border: 1px solid rgba(139, 92, 246, 0.06);
+  border-radius: 10px;
+  padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.quizOptionCard:hover {
+  background: #fff;
+  border-color: rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.05);
+}
+
+.quizOptionCard.selected {
+  background: rgba(139, 92, 246, 0.05);
+  border-color: #8b5cf6;
+  box-shadow: 0 2px 10px rgba(139, 92, 246, 0.08);
+}
+
+.quizOptionCard .bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(120, 113, 108, 0.3);
+  display: inline-block;
+  margin-top: 3px;
+  position: relative;
+}
+
+.quizOptionCard.selected .bullet {
+  border-color: #8b5cf6;
+}
+
+.quizOptionCard.selected .bullet::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 6px;
+  height: 6px;
+  background: #8b5cf6;
+  border-radius: 50%;
+}
+
+.optLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1c1917;
+}
+
+.optDesc {
+  font-size: 0.75rem;
+  color: #78716c;
+  margin-top: 0.25rem;
+}
+
+/* Option pill styling */
+.quizOptionCard.pill {
+  padding: 0.6rem 1.25rem;
+  border-radius: 30px;
+  align-items: center;
+}
+
+.quizOptionCard.pill.selected {
+  background: #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+.pillText {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #57534e;
+}
+
+.quizOptionCard.pill.selected .pillText {
+  color: #fff;
+}
+
+.calculateBtn {
+  background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+.calculateBtn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.calculateBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Match results list */
+.matcherResultsSection {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px dashed rgba(139, 92, 246, 0.25);
+  border-radius: 16px;
+  padding: 2.5rem;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preSearchCard {
+  text-align: center;
+  max-width: 400px;
+}
+
+.badgeIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.preSearchCard h3 {
+  font-size: 1.35rem;
+  color: #1c1917;
+  margin-bottom: 0.5rem;
+}
+
+.preSearchCard p {
+  color: #57534e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Scanner loading animation */
+.scannerLoader {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.scannerPulse {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  border: 1.5px solid rgba(139, 92, 246, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: radarScan 2.5s linear infinite;
+}
+
+.radarLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #8b5cf6;
+  box-shadow: 0 0 10px #8b5cf6;
+  animation: radarMove 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes radarScan {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes radarMove {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.scannerLoader p {
+  color: #7c3aed;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Results layout */
+.resultsShowcase {
+  width: 100%;
+}
+
+.resultsShowcase h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1c1917;
+  margin-bottom: 1.5rem;
+}
+
+.matchesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.matchResultCard {
+  background: #fff;
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+}
+
+/* Circular Score Graph styling */
+.scoreWheel {
+  width: 80px;
+  height: 80px;
+}
+
+.circular-chart {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(139, 92, 246, 0.05);
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  animation: progressCircle 1.2s ease-out forwards;
+}
+
+@keyframes progressCircle {
+  0% { stroke-dasharray: 0 100; }
+}
+
+.circular-chart.purple .circle {
+  stroke: #8b5cf6;
+}
+
+.percentage {
+  fill: #1c1917;
+  font-family: inherit;
+  font-size: 0.55rem;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.matchInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.matchHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.matchHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1c1917;
+}
+
+.spTheme {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #7c3aed;
+}
+
+.spDesc {
+  color: #57534e;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.reasons h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #7c3aed;
+  margin-bottom: 0.35rem;
+}
+
+.reasons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.reasons li {
+  font-size: 0.8rem;
+  color: #57534e;
+}
+
+.matchFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(139, 92, 246, 0.05);
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #78716c;
+}
+
+.enterSpaceBtn {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.enterSpaceBtn:hover {
+  color: #7c3aed;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .matcherContainer {
+    grid-template-columns: 1fr;
+  }
+}

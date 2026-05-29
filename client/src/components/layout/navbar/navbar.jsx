@@ -18,6 +18,8 @@ import logo from '../../../assets/logo/logo.png'
 const menus = [
   {title: 'home'},
   {title: 'arts'},
+  {title: 'spaces'},
+  {title: 'space-matcher'},
   {title: 'auction'},
   {title: 'help', subMenu: ['about', 'contact', 'company']},
 ];
@@ -58,10 +60,10 @@ const Navbar = ({user, isAuthenticated}) => {
                 <li key={index} onClick={() => setSidebar(false)}>
                   <NavLink
                     exact='true'
-                    to={menu.title === 'home' ? '/' : `${menu.title}`}
+                    to={menu.title === 'home' ? '/' : `/${menu.title}`}
                     onClick={menu.title === 'help' ? (e) => e.preventDefault() : null}
                   >
-                    <span>{menu.title}</span>
+                    <span>{menu.title.replace('-', ' ')}</span>
                     {menu.subMenu && <i className="fa-solid fa-chevron-down"></i>}
                   </NavLink>
 

@@ -1,15 +1,17 @@
 .chatDialogContainer > div > div{
-    position: absolute;
-    top: 3.5rem;
-    right: 2rem;
+    position: fixed !important;
+    bottom: 2rem !important;
+    right: 2rem !important;
+    top: auto !important;
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow-hover);
     border: 1px solid rgba(139, 92, 246, 0.15);
+    z-index: 9999;
 }
 
 .chatDialogContainer > div > div > .chatBox {
-    width: 38rem;
+    width: 32rem;
     background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f6efff 100%);
     display: flex;
     flex-direction: column;
@@ -72,7 +74,7 @@
 }
 
 .chatDialogContainer > div > div > .chatBox > .loginFirst{
-    height: 35rem;
+    height: 26rem;
     display: grid;
     place-items: center;
     text-align: center;
@@ -101,7 +103,7 @@
 
 /******************************Chat Feed****************************/
 .chatDialogContainer > div > div > .chatBox > .chatFeed{
-    height: 35rem;
+    height: 26rem;
     width: 100%;
     padding: 1.5rem;
     display: flex;
