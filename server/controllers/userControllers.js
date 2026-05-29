@@ -136,12 +136,12 @@ export const forgetPassword = catchAsyncError(async (req, res, next) => {
     const token = await user.createPasswordResetToken();
     await user.save({validateBeforeSave: false});
 
-    // const passwordResetUrl = `${req.protocol}://${req.get('host')}/password/reset/${token}`;
+    const resetUrl = `http://localhost:3000/password/reset/${token}`;
 
     const message = 
     `<div style="height: 100px; background-color: #f0f0f0; font-family: Times New Roman; color: black; text-align: center; padding: 25px; ">
         <p style="font-size: 16px;">Click on the button to reset the password.</p>
-        <a href="http://localhost:3000/password/reset/${token}" 
+        <a href="${resetUrl}" 
             style="
             background-color: #4CAF50; 
             color: white; 
@@ -155,9 +155,17 @@ export const forgetPassword = catchAsyncError(async (req, res, next) => {
 
     sendEmailFromSite({sender: process.env.EMAIL_ADDRESS, receiver: user.email, subject: "Password Reset", message});
     
+    let responseMessage = `Email sent to ${user.email}`;
+    if (process.env.EMAIL_ADDRESS === 'dummy@example.com' || process.env.APP_PASSWORD === 'dummy_app_password') {
+        responseMessage = `[DEV MODE] Reset Link: ${resetUrl}`;
+        console.log(`\n==================================================`);
+        console.log(`[PASSWORD RESET LINK]: ${resetUrl}`);
+        console.log(`==================================================\n`);
+    }
+
     res.status(200).json({
         success: true,
-        message: `Email sent to ${user.email}`
+        message: responseMessage
     })
 });
 

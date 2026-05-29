@@ -8,7 +8,7 @@ import './upload.css'
 import Bubbles from '../../../utility/bubbles/bubbles'
 
 // import actions
-import { clearError, clearMessage, uploadArt } from '../../../../redux/artSlice';
+import { clearError, clearMessage, uploadArt, getAllArts } from '../../../../redux/artSlice';
 
 const loadingMessages = [
     "Scanning canvas brushwork & color compositions...",
@@ -189,6 +189,7 @@ const Upload = () => {
     useEffect(() => {
         if(message){
           toast.success(message);
+          dispatch(getAllArts({}));
           dispatch(clearMessage());
           handleClear();
         }

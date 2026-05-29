@@ -89,11 +89,14 @@ export const removeFromLikes = createAsyncThunk('removeFromLikes', async (artId,
 // create review 
 export const createReview = createAsyncThunk('createReview', async (reviewData,  {rejectWithValue, dispatch}) => {
 	try{
-		const {data, status} = await axios.put(`/api/v1/art/review`, reviewData, {headers: {'Content-Type': 'application/json'}})
+		const {data, status} = await axios.put(`/api/v1/art/review`, reviewData, {
+            headers: {'Content-Type': 'application/json'},
+            withCredentials: true
+        })
         if (status >= 300) {return rejectWithValue(data)};
         return data;
 	}catch(err){
-		rejectWithValue(err.response.data);
+		return rejectWithValue(err.response.data);
 	}
 })
 
