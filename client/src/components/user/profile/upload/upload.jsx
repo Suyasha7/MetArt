@@ -323,7 +323,7 @@ const Upload = () => {
                     <span className="sparkleIcon">✨</span>
                     <div>
                         <h3>AI Art Appraiser</h3>
-                        <p className="subtitle">OpenAI GPT-4o Co-Pilot</p>
+                        <p className="subtitle">Google Gemini Vision Co-Pilot</p>
                     </div>
                 </div>
 
@@ -390,7 +390,7 @@ const Upload = () => {
                             <button type="button" onClick={handleAiAppraisal} className="analyzeBtn">
                                 <i className="fa-solid fa-microchip-ai"></i> Run Visual AI Appraisal
                             </button>
-                            <p className="analyzeHelp">GPT-4o Vision will analyze color palette, canvas composition, and suggest pricing metadata.</p>
+                            <p className="analyzeHelp">Google Gemini Vision will analyze color palette, canvas composition, and suggest pricing metadata.</p>
                         </div>
                     )}
                 </div>
