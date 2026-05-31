@@ -33,8 +33,7 @@ export const registerUser = catchAsyncError(async (req, res, next) => {
         maxAge: 7*24*60*60*1000, 
         httpOnly: true, 
         sameSite: sameSite, 
-        secure: req.secure,
-        domain: 'localhost'
+        secure: req.secure
     });
     
     res.status(201).json({
@@ -62,8 +61,7 @@ export const loginUser = catchAsyncError(async (req, res, next) => {
         maxAge: remember ? 30*24*60*60*1000 : 7*24*60*60*1000, 
         httpOnly: true, 
         sameSite: sameSite, 
-        secure: req.secure,
-        domain: 'localhost'
+        secure: req.secure
     });
 	
     res.status(200).json({
