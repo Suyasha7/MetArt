@@ -122,15 +122,16 @@ const Register = () => {
           </label>
 
           <label className="roleSelectGroup">
-              <p className="roleLabel">Are you an Artist? Select your medium below:</p>
+              <p className="roleLabel">Select your Account Type:</p>
               <div className="selectWrapper">
                 <i className="fa-solid fa-paintbrush selectIcon"></i>
-                <select name="role" value={user.role} onChange={handleChange}>
-                  <option value="" disabled>Select Role (Optional)</option>
-                  <option value='painter'>Painter (Paintings)</option>
-                  <option value='sketcher'>Sketcher (Sketching)</option>
-                  <option value='sculptor'>Sculptor (Sculptures)</option>
-                  <option value='photographer'>Photographer (Photography)</option>
+                <select name="role" value={user.role} onChange={handleChange} required>
+                  <option value="" disabled>Select Role</option>
+                  <option value='user'>Buyer (Art Collector)</option>
+                  <option value='painter'>Artist - Painter (Paintings)</option>
+                  <option value='sketcher'>Artist - Sketcher (Sketching)</option>
+                  <option value='sculptor'>Artist - Sculptor (Sculptures)</option>
+                  <option value='photographer'>Artist - Photographer (Photography)</option>
                 </select>
               </div>
           </label>
