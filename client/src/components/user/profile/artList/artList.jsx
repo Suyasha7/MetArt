@@ -94,7 +94,7 @@ const ArtList = () => {
             arts[0] && arts.map((art, index) => {
               return (
                 <tr key={index}>
-                  <td><img src={art.images[0].original_image_url} alt="artPic" /></td>
+                  <td><img src={art.images[0]?.watermarked_image_url || art.images[0]?.original_image_url || art.images[0]?.url} alt="artPic" /></td>
                   <td>{art.name} {art.isAuctionItem && "(Auction Item)"}</td>
                   <td>{art._id}</td>
                   <td>Rs {art.price}</td>
