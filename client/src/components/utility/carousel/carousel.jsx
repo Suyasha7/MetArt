@@ -3,7 +3,7 @@ import {useState, useEffect, useRef} from 'react'
 
 // import css
 import './carousel.css'
-import logo from "../../../assets/logo/logo.png"
+// import logo from "../../../assets/logo/logo.png"
 
 const Carousel = ({images, style}) => {
 

@@ -55,6 +55,7 @@ export default function Spaces() {
   useEffect(() => {
     fetchSpaces();
     fetchMyArtworks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   // Handle curation selection
