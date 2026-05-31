@@ -53,7 +53,7 @@ export default function ChatDialog() {
 
 	// socket initialization 
 	useEffect(() => {
-		socket.current = io('http://localhost:8800');
+		socket.current = io('https://metart-backend-zf7h.onrender.com');
 		
 		socket.current.on('getMessage', ({chatId, sender, receiver, text}) => {
 			dispatch(getMyChats(myData._id));
